@@ -1,8 +1,17 @@
 <head>
-    <audio autoplay loop>
+<audio id="bgm" autoplay loop muted>
   <source src="Billie Eilish - Hotline Bling (Instrumental⧸TikTok Version Looped) Lyrics.mp3" type="audio/mpeg">
-
 </audio>
+
+<script>
+  window.addEventListener('load', () => {
+    const audio = document.getElementById('bgm');
+    audio.muted = false; // try to unmute after page loads
+    audio.play().catch(() => {
+      console.log("Autoplay blocked, user interaction required.");
+    });
+  });
+</script>
 
     <link rel="stylesheet" href="./main.css">
 </head>
